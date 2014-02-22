@@ -1,8 +1,7 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="/MahApps.Metro;component/Styles/Colors.xaml" />
+        <ResourceDictionary Source="/MahApps.Metro;component/Styles/Fonts.xaml" />
 
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/Glow.xaml" />
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/FlipView.xaml" />
@@ -24,5 +23,9 @@
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/TransitioningContentControl.xaml" />
 
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/Dialogs/BaseMetroDialog.xaml" />
+
+        <ResourceDictionary Source="/MahApps.Metro;component/Themes/Border.xaml" />
+        <ResourceDictionary Source="/MahApps.Metro;component/Themes/DropShadowTextBlock.xaml" />
+        <ResourceDictionary Source="/MahApps.Metro;component/Themes/HorizontalToggleSwitch.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

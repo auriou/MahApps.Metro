@@ -1,0 +1,449 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:MahApps.Metro.Controls"
+                    xmlns:converters="clr-namespace:MahApps.Metro.Converters"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+    <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
+    <converters:ColorConverter x:Key="ColorConverter" />
+    <Style x:Key="MainViewRadioButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="#FF0E233E" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BorderBrush" Value="#FF204d89" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="PressedBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="DisabledVisualElement"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To=".55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="FocusVisualElement"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Indeterminate" />
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="CheckedBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BaseBackground"
+                                BorderBrush="#FFD1E5FF"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFD1E4FF" />
+                                    <GradientStop Offset="1" Color="#FFC0D8FF" />
+                                    <GradientStop Offset="0.301" Color="#FFADD1FF" />
+                                    <GradientStop Offset="0.3" Color="#FFD1E5FF" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="MouseOverBackground"
+                                BorderBrush="#FFFFE8A7"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3"
+                                Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="White" />
+                                    <GradientStop Offset="1" Color="#FFFFE69E" />
+                                    <GradientStop Offset="0.3" Color="#FFFFE8A7" />
+                                    <GradientStop Offset="0.301" Color="#FFFFD767" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="PressedBackground"
+                                BorderBrush="#FFFFAC42"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3"
+                                Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFFFDB69" />
+                                    <GradientStop Offset="1" Color="#FFFEBA66" />
+                                    <GradientStop Offset="0.3" Color="#FFFFAC42" />
+                                    <GradientStop Offset="0.301" Color="#FFFB8E3E" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="CheckedBackground"
+                                BorderBrush="#FFFFBB6E"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3"
+                                Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFFFD9AA" />
+                                    <GradientStop Offset="1" Color="#FFFEE17A" />
+                                    <GradientStop Offset="0.3" Color="#FFFFBB6E" />
+                                    <GradientStop Offset="0.301" Color="#FFFFAE42" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Grid Margin="{TemplateBinding BorderThickness}">
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </Grid>
+                        <Rectangle x:Name="DisabledVisualElement"
+                                   Fill="#FFFFFFFF"
+                                   IsHitTestVisible="false"
+                                   Opacity="0"
+                                   RadiusX="3"
+                                   RadiusY="3" />
+                        <Rectangle x:Name="FocusVisualElement"
+                                   Margin="1"
+                                   IsHitTestVisible="false"
+                                   Opacity="0"
+                                   RadiusX="2"
+                                   RadiusY="2"
+                                   Stroke="{x:Null}"
+                                   StrokeThickness="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MainMenuButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="PressedBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="DisabledVisualElement"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To=".55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="FocusVisualElement"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Indeterminate" />
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="CheckedBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BaseBackground"
+                                Background="{DynamicResource ColorNoirFonce}"
+                                BorderThickness="0"
+                                CornerRadius="0,5,5,0" />
+                        <Border x:Name="MouseOverBackground"
+                                Background="{DynamicResource ColorNoirPlusClair}"
+                                BorderThickness="0"
+                                CornerRadius="0,5,5,0"
+                                Opacity="0" />
+                        <Border x:Name="PressedBackground"
+                                Background="{DynamicResource ColorBleuClair}"
+                                BorderThickness="0"
+                                CornerRadius="0,5,5,0"
+                                Opacity="0" />
+                        <Border x:Name="CheckedBackground"
+                                Background="{DynamicResource ColorBleuClair}"
+                                BorderThickness="0"
+                                CornerRadius="0,5,5,0"
+                                Opacity="0" />
+                        <Grid Margin="{TemplateBinding BorderThickness}">
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </Grid>
+                        <Rectangle x:Name="DisabledVisualElement"
+                                   Fill="#FFFFFFFF"
+                                   IsHitTestVisible="false"
+                                   Opacity="0"
+                                   RadiusX="3"
+                                   RadiusY="3" />
+                        <Rectangle x:Name="FocusVisualElement"
+                                   Margin="1"
+                                   IsHitTestVisible="false"
+                                   Opacity="0"
+                                   RadiusX="2"
+                                   RadiusY="2"
+                                   Stroke="{x:Null}"
+                                   StrokeThickness="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="8" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Blue" />
+        <Setter Property="Margin" Value="0,8,8,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="RadioButton.GroupName" Value="MainMenuGroup" />
+    </Style>
+    <Style x:Key="ArianeButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0"
+                                                        Storyboard.TargetName="PressCenter"
+                                                        Storyboard.TargetProperty="Background.Color"
+                                                        To="{DynamicResource ColorBleuClair}"
+                                                        d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Indeterminate" />
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="CheckedBackground"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1"
+                                                         d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="BaseElement">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="15" />
+                            </Grid.ColumnDefinitions>
+
+                            <Path Grid.Column="0"
+                                  Margin="0,0,-1,0"
+                                  VerticalAlignment="Top"
+                                  Data="M0.3870872,0 L18.17,0 18.17,69 0.38781309,69 0.38781309,68.995049 8.3789997,34.178989 z M0,0 L0.3870872,0 0.3870872,0.0059295148 0,0.0059295148 z"
+                                  Fill="{TemplateBinding Background}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                            <Grid x:Name="PressCenter"
+                                  Grid.Row="1"
+                                  Grid.Column="1"
+                                  Width="Auto"
+                                  Margin="0,0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch"
+                                  Background="{TemplateBinding Background}" />
+                            <Path Grid.Column="2"
+                                  Width="15"
+                                  Margin="-1,0,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Panel.ZIndex="-1"
+                                  Data="M92.99037,0 L199.03512,106.01351 92.999999,214.00304 92.999999,214.01839 92.984923,214.01839 0,214.01839 0,0.018391682 92.99037,0.018391682 z"
+                                  Fill="{TemplateBinding Background}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                        </Grid>
+                        <Grid x:Name="MouseOverBackground" Opacity="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="15" />
+                            </Grid.ColumnDefinitions>
+
+                            <Path Grid.Column="0"
+                                  Margin="0,0,-1,0"
+                                  VerticalAlignment="Top"
+                                  Data="M0.3870872,0 L18.17,0 18.17,69 0.38781309,69 0.38781309,68.995049 8.3789997,34.178989 z M0,0 L0.3870872,0 0.3870872,0.0059295148 0,0.0059295148 z"
+                                  Fill="{DynamicResource ColorNoirPlusClair}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                            <Grid Grid.Row="1"
+                                  Grid.Column="1"
+                                  Width="Auto"
+                                  Margin="0,0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch"
+                                  Background="{DynamicResource ColorNoirPlusClair}" />
+                            <Path x:Name="Elem3"
+                                  Grid.Column="2"
+                                  Width="15"
+                                  Margin="-1,0,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Panel.ZIndex="-1"
+                                  Data="M92.99037,0 L199.03512,106.01351 92.999999,214.00304 92.999999,214.01839 92.984923,214.01839 0,214.01839 0,0.018391682 92.99037,0.018391682 z"
+                                  Fill="{DynamicResource ColorNoirPlusClair}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                        </Grid>
+                        <Grid x:Name="CheckedBackground" Opacity="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="15" />
+                            </Grid.ColumnDefinitions>
+
+                            <Path Grid.Column="0"
+                                  Margin="0,0,-1,0"
+                                  VerticalAlignment="Top"
+                                  Data="M0.3870872,0 L18.17,0 18.17,69 0.38781309,69 0.38781309,68.995049 8.3789997,34.178989 z M0,0 L0.3870872,0 0.3870872,0.0059295148 0,0.0059295148 z"
+                                  Fill="{DynamicResource ColorBleuClair}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                            <Grid Grid.Row="1"
+                                  Grid.Column="1"
+                                  Width="Auto"
+                                  Margin="0,0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch"
+                                  Background="{DynamicResource ColorBleuClair}" />
+                            <Path Grid.Column="2"
+                                  Width="15"
+                                  Margin="-1,0,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Panel.ZIndex="-1"
+                                  Data="M92.99037,0 L199.03512,106.01351 92.999999,214.00304 92.999999,214.01839 92.984923,214.01839 0,214.01839 0,0.018391682 92.99037,0.018391682 z"
+                                  Fill="{DynamicResource ColorBleuClair}"
+                                  Stretch="Fill"
+                                  StrokeThickness="0" />
+                        </Grid>
+                        <Grid Width="Auto"
+                              Margin="20,0,20,0"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              TextBlock.FontSize="{TemplateBinding FontSize}"
+                                              TextBlock.Foreground="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="-2,0,0,0" />
+        <Setter Property="RadioButton.GroupName" Value="ArianeGroup" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="{DynamicResource ColorPlusWhite}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorWhite}" />
+
+    </Style>
+    <Style x:Key="MainMenuBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Padding" Value="15" />
+    </Style>
+    <Style x:Key="MainMenuTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="NoWrap" />
+        <Setter Property="TextTrimming" Value="None" />
+        <Setter Property="Margin" Value="0,0,0,5" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorWhite}" />
+    </Style>
+
+</ResourceDictionary>

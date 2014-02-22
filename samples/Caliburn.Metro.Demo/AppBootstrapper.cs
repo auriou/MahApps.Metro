@@ -1,71 +1,49 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.ComponentModel.Composition.Hosting;
-using System.ComponentModel.Composition.Primitives;
-using System.Linq;
-using System.Windows;
-using Caliburn.Metro.Demo.Controls;
-using Caliburn.Micro;
-
 namespace Caliburn.Metro.Demo
 {
-    public class AppBootstrapper : Bootstrapper<IShell>
-    {
-        private CompositionContainer container;
+	using System;
+	using System.Collections.Generic;
+	using Caliburn.Micro;
 
-        protected override void BuildUp(object instance)
-        {
-            this.container.SatisfyImportsOnce(instance);
-        }
+	public class AppBootstrapper : BootstrapperBase
+	{
+		SimpleContainer container;
 
-        /// <summary>
-        ///     By default, we are configured to use MEF
-        /// </summary>
-        protected override void Configure()
-        {
-            var catalog =
-                new AggregateCatalog(
-                    AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>());
+		public AppBootstrapper()
+		{
+			Start();
+		}
 
-            this.container = new CompositionContainer(catalog);
+		protected override void Configure()
+		{
+			container = new SimpleContainer();
 
-            var batch = new CompositionBatch();
+			container.Singleton<IWindowManager, WindowManager>();
+			container.Singleton<IEventAggregator, EventAggregator>();
+			container.PerRequest<IShell, ShellViewModel>();
+		}
 
-            batch.AddExportedValue<IWindowManager>(new WindowManager());
-            batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            batch.AddExportedValue(this.container);
-            batch.AddExportedValue(catalog);
+		protected override object GetInstance(Type service, string key)
+		{
+			var instance = container.GetInstance(service, key);
+			if (instance != null)
+				return instance;
 
-            this.container.Compose(batch);
-        }
+			throw new InvalidOperationException("Could not locate any instances.");
+		}
 
-        protected override IEnumerable<object> GetAllInstances(Type serviceType)
-        {
-            return this.container.GetExportedValues<object>(AttributedModelServices.GetContractName(serviceType));
-        }
+		protected override IEnumerable<object> GetAllInstances(Type service)
+		{
+			return container.GetAllInstances(service);
+		}
 
-        protected override object GetInstance(Type serviceType, string key)
-        {
-            var contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(serviceType) : key;
-            var exports = this.container.GetExportedValues<object>(contract);
+		protected override void BuildUp(object instance)
+		{
+			container.BuildUp(instance);
+		}
 
-            if (exports.Any())
-            {
-                return exports.First();
-            }
-
-            throw new Exception(string.Format("Could not locate any instances of contract {0}.", contract));
-        }
-
-        protected override void OnStartup(object sender, StartupEventArgs e)
-        {
-            var startupTasks =
-                this.GetAllInstances(typeof(StartupTask))
-                    .Cast<ExportedDelegate>()
-                    .Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
-            startupTasks.Apply(s => s());
-            base.OnStartup(sender, e);
-        }
-    }
+		protected override void OnStartup(object sender, System.Windows.StartupEventArgs e)
+		{
+			DisplayRootViewFor<IShell>();
+		}
+	}
 }

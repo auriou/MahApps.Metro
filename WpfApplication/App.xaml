@@ -1,0 +1,25 @@
+﻿<Application x:Class="WpfApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+               
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Themes/GenericFlat.xaml" />
+
+
+                
+                
+
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />-->
+
+
+
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Style BasedOn="{StaticResource MetroTextBox}" TargetType="TextBox" />
+            <Style BasedOn="{StaticResource MetroRichTextBox}" TargetType="RichTextBox" />-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

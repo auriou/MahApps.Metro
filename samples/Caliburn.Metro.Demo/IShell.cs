@@ -1,6 +1,3 @@
-namespace Caliburn.Metro.Demo
-{
-    public interface IShell
-    {
-    }
+namespace Caliburn.Metro.Demo {
+    public interface IShell {}
 }

@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ 
+       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+       Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <!--<TextBox Width="100" Height="20" controls:TextboxHelper.ClearTextButton="True" ></TextBox>-->
+        <controls:HorizontalToggleSwitch Width="100"
+                                              Height="20"
+                                              HorizontalAlignment="Left"
+                                              CheckedContent="Test"
+                                              IsChecked="True"
+                                              ThumbSize="30"
+                                              UncheckedContent="Deux" />
+        <TextBox Width="100" Height="25" Text="Test" controls:TextboxHelper.ClearTextButton="True"></TextBox>
+    </Grid>
+</Window>

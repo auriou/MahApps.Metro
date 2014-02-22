@@ -3,10 +3,8 @@
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls">
 
     <Style TargetType="{x:Type Controls:ToggleSwitchButton}">
-        <Setter Property="IsTabStop"
-                Value="False" />
-        <Setter Property="SwitchForeground"
-                Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SwitchForeground" Value="{DynamicResource AccentColorBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:ToggleSwitchButton}">
@@ -20,48 +18,38 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                       Storyboard.TargetName="disabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{x:Static Visibility.Visible}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="disabled" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                       Storyboard.TargetName="disabledTumb">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{x:Static Visibility.Visible}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="disabledTumb" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                       Storyboard.TargetName="hover">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{x:Static Visibility.Visible}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="hover" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                       Storyboard.TargetName="pressed">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{x:Static Visibility.Visible}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pressed" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="CheckStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.05"
-                                                      To="Unchecked" />
-                                    <VisualTransition GeneratedDuration="0:0:0.05"
-                                                      To="Checked">
+                                    <VisualTransition GeneratedDuration="0:0:0.05" To="Unchecked" />
+                                    <VisualTransition GeneratedDuration="0:0:0.05" To="Checked">
                                         <Storyboard>
                                             <DoubleAnimation Duration="0:0:0.05"
-                                                             To="47"
+                                                             Storyboard.TargetName="SwitchThumbTranslate"
                                                              Storyboard.TargetProperty="(TranslateTransform.X)"
-                                                             Storyboard.TargetName="SwitchThumbTranslate">
+                                                             To="47">
                                                 <DoubleAnimation.EasingFunction>
                                                     <CircleEase EasingMode="EaseIn" />
                                                 </DoubleAnimation.EasingFunction>
@@ -71,52 +59,46 @@
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Checked">
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="BackgroundTranslation"
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="BackgroundTranslation"
                                                          Storyboard.TargetProperty="(TranslateTransform.X)"
-                                                         Duration="0"
                                                          To="68">
                                             <DoubleAnimation.EasingFunction>
-                                                <ExponentialEase Exponent="15"
-                                                                 EasingMode="EaseOut" />
+                                                <ExponentialEase EasingMode="EaseOut" Exponent="15" />
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)"
-                                                                       Storyboard.TargetName="SwitchThumb">
-                                            <EasingDoubleKeyFrame KeyTime="0"
-                                                                  Value="47" />
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchThumb" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="47" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Dragging" />
                                 <VisualState x:Name="Unchecked">
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="BackgroundTranslation"
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="BackgroundTranslation"
                                                          Storyboard.TargetProperty="(TranslateTransform.X)"
-                                                         Duration="0"
                                                          To="0" />
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                       Storyboard.TargetName="border">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{x:Static Visibility.Visible}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ThicknessAnimation Duration="0"
-                                                            To="1"
+                                                            Storyboard.TargetName="checked"
                                                             Storyboard.TargetProperty="(Border.Margin)"
-                                                            Storyboard.TargetName="checked" />
+                                                            To="1" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Grid x:Name="SwitchRoot"
-                              Background="{x:Null}"
-                              Height="Auto"
                               Width="Auto"
+                              Height="Auto"
+                              Background="{x:Null}"
                               UseLayoutRounding="True">
-                            <Grid x:Name="SwitchTrack"
-                                  Width="Auto">
+                            <Grid x:Name="SwitchTrack" Width="Auto">
                                 <Grid x:Name="SwitchBottom"
-                                      Height="25"
-                                      Width="60">
+                                      Width="60"
+                                      Height="25">
                                     <Rectangle x:Name="SwitchBackground"
                                                Width="Auto"
                                                Height="Auto"
@@ -126,46 +108,45 @@
                                             <TranslateTransform x:Name="BackgroundTranslation" />
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
-                                    <Border BorderThickness="2"
-                                            BorderBrush="{DynamicResource GrayBrush4}">
+                                    <Border BorderBrush="{DynamicResource GrayBrush4}" BorderThickness="2">
                                         <Grid Margin="2">
                                             <Border x:Name="checked"
-                                                    BorderThickness="0"
+                                                    Margin="0"
                                                     Background="{TemplateBinding SwitchForeground}"
-                                                    Margin="0" />
+                                                    BorderThickness="0" />
                                             <Border x:Name="border"
-                                                    BorderThickness="0"
+                                                    Margin="0"
                                                     Background="{DynamicResource GrayBrush4}"
-                                                    Visibility="Collapsed"
-                                                    Margin="0" />
+                                                    BorderThickness="0"
+                                                    Visibility="Collapsed" />
                                             <Border x:Name="pressed"
-                                                    BorderThickness="0"
+                                                    Margin="0"
                                                     Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+                                                    BorderThickness="0"
                                                     Opacity="0.25"
-                                                    Visibility="Collapsed"
-                                                    Margin="0" />
+                                                    Visibility="Collapsed" />
                                             <Border x:Name="hover"
-                                                    BorderThickness="0"
+                                                    Margin="0"
                                                     Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+                                                    BorderThickness="0"
                                                     Opacity="0.15"
-                                                    Visibility="Collapsed"
-                                                    Margin="0" />
+                                                    Visibility="Collapsed" />
                                             <Border x:Name="disabled"
-                                                    BorderThickness="0"
+                                                    Margin="0"
                                                     Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+                                                    BorderThickness="0"
                                                     Opacity="0.5"
-                                                    Visibility="Collapsed"
-                                                    Margin="0" />
+                                                    Visibility="Collapsed" />
                                         </Grid>
                                     </Border>
                                 </Grid>
                                 <Border x:Name="SwitchThumb"
-                                        BorderBrush="{TemplateBinding Background}"
-                                        BorderThickness="0"
-                                        Margin="0"
                                         Width="13"
                                         Height="Auto"
-                                        HorizontalAlignment="Left">
+                                        Margin="0"
+                                        HorizontalAlignment="Left"
+                                        BorderBrush="{TemplateBinding Background}"
+                                        BorderThickness="0">
                                     <Border.RenderTransform>
                                         <TransformGroup>
                                             <ScaleTransform />
@@ -176,13 +157,13 @@
                                     </Border.RenderTransform>
                                     <Grid>
                                         <Border x:Name="ThumbCenter"
+                                                Background="{DynamicResource BlackBrush}"
                                                 BorderBrush="{TemplateBinding Foreground}"
-                                                BorderThickness="0"
-                                                Background="{DynamicResource BlackBrush}" />
+                                                BorderThickness="0" />
                                         <Border x:Name="disabledTumb"
+                                                Background="{DynamicResource WhiteBrush}"
                                                 BorderBrush="{TemplateBinding Foreground}"
                                                 BorderThickness="0"
-                                                Background="{DynamicResource WhiteBrush}"
                                                 Opacity="0.5"
                                                 Visibility="Collapsed" />
                                     </Grid>
@@ -196,30 +177,23 @@
     </Style>
 
     <Style TargetType="{x:Type Controls:ToggleSwitch}">
-        <Setter Property="IsTabStop"
-                Value="True" />
-        <Setter Property="SwitchForeground"
-                Value="{DynamicResource AccentColorBrush}" />
-        <Setter Property="HorizontalContentAlignment"
-                Value="Left" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Center" />
-        <Setter Property="Foreground"
-                Value="{DynamicResource BlackBrush}" />
-        <Setter Property="FontFamily"
-                Value="Segoe UI Semibold" />
-        <Setter Property="FontSize"
-                Value="14.667" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="SwitchForeground" Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+        <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+        <Setter Property="FontSize" Value="14.667" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Mode=OneWay}"
-                               FontWeight="Normal"
+                    <TextBlock Margin="0,0,0,5"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
-                               Margin="0,0,0,5"
+                               FontSize="16"
+                               FontWeight="Normal"
                                Opacity="0.65"
-                               FontSize="16" />
+                               Text="{Binding Mode=OneWay}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -234,17 +208,17 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="Header"
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Header"
                                                          Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         Duration="0"
                                                          To="0.3" />
-                                        <DoubleAnimation Storyboard.TargetName="Content"
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Content"
                                                          Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         Duration="0"
                                                          To="0.3" />
-                                        <DoubleAnimation Storyboard.TargetName="Switch"
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Switch"
                                                          Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         Duration="0"
                                                          To="0.75" />
                                     </Storyboard>
                                 </VisualState>
@@ -256,10 +230,8 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"
-                                                  x:Name="firstCol" />
-                                <ColumnDefinition Width="Auto"
-                                                  x:Name="secCol" />
+                                <ColumnDefinition x:Name="firstCol" Width="*" />
+                                <ColumnDefinition x:Name="secCol" Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <ContentControl x:Name="Header"
                                             Grid.ColumnSpan="2"
@@ -268,44 +240,31 @@
                                             IsTabStop="False" />
                             <ContentControl x:Name="Content"
                                             Grid.Row="1"
-                                            Content="{TemplateBinding Content}"
-                                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                                            IsTabStop="False"
                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{TemplateBinding Content}"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
                                             FontFamily="{TemplateBinding FontFamily}"
-                                            FontSize="{TemplateBinding FontSize}" />
+                                            FontSize="{TemplateBinding FontSize}"
+                                            IsTabStop="False" />
                             <Controls:ToggleSwitchButton x:Name="Switch"
-                                                         Grid.Column="1"
                                                          Grid.Row="1"
+                                                         Grid.Column="1"
+                                                         VerticalAlignment="Center"
                                                          Background="{TemplateBinding Background}"
-                                                         SwitchForeground="{TemplateBinding SwitchForeground}"
-                                                         VerticalAlignment="Center" />
+                                                         SwitchForeground="{TemplateBinding SwitchForeground}" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Header}"
-                                     Value="{x:Null}">
-                            <Setter TargetName="Header"
-                                    Property="Visibility"
-                                    Value="Collapsed" />
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Header}" Value="{x:Null}">
+                            <Setter TargetName="Header" Property="Visibility" Value="Collapsed" />
                         </DataTrigger>
-                        <Trigger Property="ContentDirection"
-                                 Value="RightToLeft">
-                            <Setter Property="HorizontalContentAlignment"
-                                    Value="Right" />
-                            <Setter TargetName="firstCol"
-                                    Property="Width"
-                                    Value="Auto" />
-                            <Setter TargetName="secCol"
-                                    Property="Width"
-                                    Value="*" />
-                            <Setter TargetName="Content"
-                                    Property="Grid.Column"
-                                    Value="1" />
-                            <Setter TargetName="Switch"
-                                    Property="Grid.Column"
-                                    Value="0" />
+                        <Trigger Property="ContentDirection" Value="RightToLeft">
+                            <Setter Property="HorizontalContentAlignment" Value="Right" />
+                            <Setter TargetName="firstCol" Property="Width" Value="Auto" />
+                            <Setter TargetName="secCol" Property="Width" Value="*" />
+                            <Setter TargetName="Content" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="Switch" Property="Grid.Column" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
