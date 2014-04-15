@@ -5,21 +5,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-               
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Themes/GenericFlat.xaml" />
-
-
-                
-                
-
-                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />-->
-                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />-->
-
-
-
-            </ResourceDictionary.MergedDictionaries>
-            <!--<Style BasedOn="{StaticResource MetroTextBox}" TargetType="TextBox" />
-            <Style BasedOn="{StaticResource MetroRichTextBox}" TargetType="RichTextBox" />-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Flat/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Xceed.Wpf.Theme.FlatMetro;component/Base/Implicit.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Xceed.Wpf.Theme.FlatMetro;component/DataGrid/Implicit.xaml" />
+                <!-- <ResourceDictionary Source="pack://application:,,,/Xceed.Wpf.DataGrid.Themes.Metro/controls/tableflowview/implicitstyles.xaml"/>-->
+                </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

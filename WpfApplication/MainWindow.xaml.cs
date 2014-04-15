@@ -22,6 +22,7 @@ namespace WpfApplication
     {
         public MainWindow()
         {
+            this.DataContext = Xceed.Wpf.Samples.SampleData.SampleDataProvider.GetOrders();
             InitializeComponent();
         }
     }

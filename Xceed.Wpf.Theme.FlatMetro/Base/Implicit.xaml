@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Xceed.Wpf.Theme.FlatMetro;component/Base/Controls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style BasedOn="{StaticResource metroButton}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource metroProgressBar}" TargetType="{x:Type ProgressBar}" />
+    <Style BasedOn="{StaticResource metroListBox}" TargetType="{x:Type ListBox}" />
+    <Style BasedOn="{StaticResource metroCalendar}" TargetType="{x:Type Calendar}" />
+    <Style BasedOn="{StaticResource metroComboBox}" TargetType="{x:Type ComboBox}" />
+    <Style BasedOn="{StaticResource metroComboBoxItem}" TargetType="{x:Type ComboBoxItem}" />
+    <Style BasedOn="{StaticResource metroRepeatButton}" TargetType="{x:Type RepeatButton}" />
+    <Style BasedOn="{StaticResource metroRichTextBox}" TargetType="{x:Type RichTextBox}" />
+    <Style BasedOn="{StaticResource metroScrollViewer}" TargetType="{x:Type ScrollViewer}" />
+    <Style BasedOn="{StaticResource metroSlider}" TargetType="{x:Type Slider}" />
+    <Style BasedOn="{StaticResource metroTextBox}" TargetType="{x:Type TextBox}" />
+    <Style BasedOn="{StaticResource metroToggleButton}" TargetType="{x:Type ToggleButton}" />
+    <Style BasedOn="{StaticResource metroCheckBox}" TargetType="{x:Type CheckBox}" />
+    <Style BasedOn="{StaticResource metroContextMenu}" TargetType="{x:Type ContextMenu}" />
+    <Style BasedOn="{StaticResource metroPasswordBox}" TargetType="{x:Type PasswordBox}" />
+    <Style BasedOn="{StaticResource metroGroupBox}" TargetType="{x:Type GroupBox}" />
+    <Style BasedOn="{StaticResource metroTabControl}" TargetType="{x:Type TabControl}" />
+    <Style BasedOn="{StaticResource metroLabel}" TargetType="{x:Type Label}" />
+    <Style BasedOn="{StaticResource metroRadioButton}" TargetType="{x:Type RadioButton}" />
+    <Style BasedOn="{StaticResource metroScrollBar}" TargetType="{x:Type ScrollBar}" />
+    <Style BasedOn="{StaticResource mertoToolTip}" TargetType="{x:Type ToolTip}" />
+    <Style BasedOn="{StaticResource metroStatusBar}" TargetType="{x:Type StatusBar}" />
+    <Style BasedOn="{StaticResource metroWindow}" TargetType="{x:Type Window}" />
+    <Style BasedOn="{StaticResource metroDatePicker}" TargetType="{x:Type DatePicker}" />
+    <Style BasedOn="{StaticResource metroListView}" TargetType="{x:Type ListView}" />
+    <Style BasedOn="{StaticResource metroPage}" TargetType="{x:Type Page}" />
+    <Style BasedOn="{StaticResource metroExpander}" TargetType="{x:Type Expander}" />
+    <Style BasedOn="{StaticResource metroTreeView}" TargetType="{x:Type TreeView}" />
+    <Style BasedOn="{StaticResource metroTreeViewItem}" TargetType="{x:Type TreeViewItem}" />
+    <Style BasedOn="{StaticResource metroMenu}" TargetType="{x:Type Menu}" />
+    <Style BasedOn="{StaticResource metroMenuItem}" TargetType="{x:Type MenuItem}" />
+    <Style BasedOn="{StaticResource metroToolBar}" TargetType="{x:Type ToolBar}" />
+    <Style BasedOn="{StaticResource metroResizeGrip}" TargetType="{x:Type ResizeGrip}" />
+    <Style BasedOn="{StaticResource metroGridSplitter}" TargetType="{x:Type GridSplitter}" />
+    <Style BasedOn="{StaticResource metroDataGrid}" TargetType="{x:Type DataGrid}" />
+    <Style BasedOn="{StaticResource metroDataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style BasedOn="{StaticResource metroDataGridCell}" TargetType="{x:Type DataGridCell}" />
+    <Style BasedOn="{StaticResource metroDataGridRowHeader}" TargetType="{x:Type DataGridRowHeader}" />
+    <Style BasedOn="{StaticResource metroDataGridRow}" TargetType="{x:Type DataGridRow}" />
+</ResourceDictionary>

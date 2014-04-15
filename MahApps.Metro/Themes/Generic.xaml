@@ -24,7 +24,7 @@
 
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/Dialogs/BaseMetroDialog.xaml" />
 
-        <ResourceDictionary Source="/MahApps.Metro;component/Themes/Border.xaml" />
+        <ResourceDictionary Source="/MahApps.Metro;component/Themes/Borders.xaml" />
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/DropShadowTextBlock.xaml" />
         <ResourceDictionary Source="/MahApps.Metro;component/Themes/HorizontalToggleSwitch.xaml" />
     </ResourceDictionary.MergedDictionaries>

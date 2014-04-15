@@ -63,6 +63,10 @@
     <Reference Include="GrayscaleEffect">
       <HintPath>..\..\Lib\GrayscaleEffect.dll</HintPath>
     </Reference>
+    <Reference Include="MahApps.Metro, Version=0.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MahApps.Metro\bin\Release\NET45\MahApps.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
       <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.165\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>

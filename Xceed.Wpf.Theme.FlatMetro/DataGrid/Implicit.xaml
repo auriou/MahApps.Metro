@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Xceed.Wpf.Theme.FlatMetro;component/DataGrid/Controls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style BasedOn="{StaticResource tableflowViewMetroDefaultValuesStyle}" TargetType="{x:Type xcdg:TableflowView}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroGridControlStyle}" TargetType="{x:Type xcdg:DataGridControl}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroRowStyle}" TargetType="{x:Type xcdg:Row}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroDataRowStyle}" TargetType="{x:Type xcdg:DataRow}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroColumnManagerRowStyle}" TargetType="{x:Type xcdg:ColumnManagerRow}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroCellStyle}" TargetType="{x:Type xcdg:Cell}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroDataCellStyle}" TargetType="{x:Type xcdg:DataCell}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroDetailIndicatorStyle}" TargetType="{x:Type xcdg:DetailIndicator}" />
+    <Style BasedOn="{StaticResource tableFlowViewMetroColumnManagerCellStyle}" TargetType="{x:Type xcdg:ColumnManagerCell}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupByControlStyle}" TargetType="{x:Type xcdg:GroupByControl}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupByItemStyle}" TargetType="{x:Type xcdg:GroupByItem}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupHeaderControlStyle}" TargetType="{x:Type xcdg:GroupHeaderControl}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupLevelIndicatorStyle}" TargetType="{x:Type xcdg:GroupLevelIndicator}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupLevelIndicatorPaneStyle}" TargetType="{x:Type xcdg:GroupLevelIndicatorPane}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupNavigationButtonStyle}" TargetType="{x:Type xcdg:GroupNavigationButton}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupNavigationControlStyle}" TargetType="{x:Type xcdg:GroupNavigationControl}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroGroupNavigationControlItemStyle}" TargetType="{x:Type xcdg:GroupNavigationControlItem}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroHierarchicalGroupByControlStyle}" TargetType="{x:Type xcdg:HierarchicalGroupByControl}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroHierarchicalGroupByControlNodeStyle}" TargetType="{x:Type xcdg:HierarchicalGroupByControlNode}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroHierarchicalGroupByItemStyle}" TargetType="{x:Type xcdg:HierarchicalGroupByItem}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroHierarchicalGroupLevelIndicatorPaneStyle}" TargetType="{x:Type xcdg:HierarchicalGroupLevelIndicatorPane}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroRowSelectorStyle}" TargetType="{x:Type xcdg:RowSelector}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroRowSelectorPaneStyle}" TargetType="{x:Type xcdg:RowSelectorPane}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroTableViewScrollViewerStyle}" TargetType="{x:Type xcdg:TableViewScrollViewer}" />
+    <Style BasedOn="{StaticResource tableflowViewMetroScrollTipStyle}" TargetType="{x:Type xcdg:ScrollTip}" />
+    <!--  <Style TargetType="{x:Type xcdg:MultiColumnComboBox}" BasedOn="{StaticResource metroMultiColumnComboBox}" />  -->
+
+</ResourceDictionary>
